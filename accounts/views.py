@@ -5,14 +5,17 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
 from rest_framework.views import APIView
 from .serializers import UserSerializer
+from drf_yasg.utils import swagger_auto_schema
 
 User = get_user_model()
 
+swagger_auto_schema()
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
+swagger_auto_schema()
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         email = request.data.get("email")
