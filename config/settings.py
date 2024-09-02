@@ -3,7 +3,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-!k5%)vjj&c5qi@opznsx1ct*5x5pjr=&y^*=vbsl3idcp4hojm"
 DEBUG = True
-ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
@@ -12,6 +11,8 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ],
 }
+
+ALLOWED_HOSTS = ["192.168.0.103"]
 
 
 INSTALLED_APPS = [

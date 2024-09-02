@@ -6,7 +6,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="My API",
+        title="Lexigo",
         default_version="v1",
         description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
@@ -18,8 +18,8 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("/admin/", admin.site.urls),
-    path("/api/auth/", include("accounts.urls")),
+    path("admin/", admin.site.urls),
+    path("/api/", include("accounts.urls")),
     path(
         "swagger/",
         schema_view.with_ui("swagger", cache_timeout=0),
